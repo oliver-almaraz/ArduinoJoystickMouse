@@ -6,11 +6,11 @@ for the inspiration.
 
 ## Components:
 - Dual axis + click Joystick **x2**
-- Dupont male-to-female wires **x10*
-- Any Arduino with at least:
+- Dupont male-to-female wires **x10**
+- Any Arduino compatible board with at least:
     - 4 analog inputs
     - 4 left pins for 5v output and GND
-    - Serial communication to a computer
+    - Serial communication to a computer (USB, Bluetooth...)
     
  ## Wiring setup in \*.ino file.
  ## Instructions:
