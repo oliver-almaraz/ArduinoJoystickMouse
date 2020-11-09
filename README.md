@@ -1,5 +1,5 @@
-# ArduinoJoystickMouse
-Create a simple mouse with vertical and horizontal scroll using two joysticks connected to an Arduino.
+# Arduino Joystick Mouse
+Create a simple mouse with **vertical and horizontal scroll** using two joysticks connected to an Arduino.
 
 Thanks to [Shubham Santosh](https://create.arduino.cc/projecthub/shubhamsantosh99/joystick-controlled-mouse-af2939)
 for the inspiration.
