@@ -1,14 +1,14 @@
 // JOYSTICKS @ ARDUINO SETUP
 
 // 1° Joystick
-#define CLICK_IZQUIERDO 9 // SW
+#define LEFT_CLICK 9 // SW
 #define ANALOG_1_MOUSE A0 // VRy
 #define ANALOG_2_MOUSE A1 // VRx
 // +5v connected to pin 5V
 // GND connected to one Arduino's GND
 
 // 2° Joystick
-#define CLICK_DERECHO 10     // SW
+#define RIGHT_CLICK 10     // SW
 #define ANALOG_1_SCROLL A2  // VRy
 #define ANALOG_2_SCROLL A3  // VRx
 #define HIGH_SCROLL 7       // +5v
@@ -19,13 +19,13 @@ void setup() {
 
   Serial.begin(9600);
 
-  // 1er joystick
-  pinMode(CLICK_IZQUIERDO,INPUT);
-  digitalWrite(CLICK_IZQUIERDO,HIGH);
+  // 1° Joystick
+  pinMode(LEFT_CLICK,INPUT);
+  digitalWrite(LEFT_CLICK,HIGH);
 
-  // 2ndo Joystick
-  pinMode(CLICK_DERECHO,INPUT);
-  digitalWrite(CLICK_DERECHO,HIGH);
+  // 2° Joystick
+  pinMode(RIGHT_CLICK,INPUT);
+  digitalWrite(RIGHT_CLICK,HIGH);
   pinMode(HIGH_SCROLL, OUTPUT);
   digitalWrite(HIGH_SCROLL, HIGH);
 
@@ -33,7 +33,7 @@ void setup() {
 }
 
 void loop() {
-  
+
   // MOUSE
   int z=0,xpos=0,ypos=0;
   int x=analogRead(ANALOG_1_MOUSE);
@@ -66,16 +66,16 @@ void loop() {
 
 
   if(x1>=550)
-    Serial.print("DERECHA\n");
+    Serial.print("RIGHT\n");
   if(x1<=450)
-    Serial.print("IZQUIERDA\n"); 
+    Serial.print("LEFT\n"); 
   if(y1>=550)
-    Serial.print("ARRIBA\n");
+    Serial.print("UP\n");
   if(y1<=450)
-    Serial.print("ABAJO\n");
+    Serial.print("DOWN\n");
 
-  if(digitalRead(CLICK_DERECHO)==LOW)
-    Serial.print("CLICK\n");
+  if(digitalRead(RIGHT_CLICK)==LOW)
+    Serial.print("RIGHT_CLICK\n");
 
   delay(100);
 }
