@@ -12,4 +12,11 @@ for the inspiration.
     - 4 left pins for 5v output and GND
     - Serial communication to a computer
     
+ ## Wiring setup in \*.ino file.
+ ## Instructions:
+ Compile and upload \*.ino code to your board, find which serial port it's connected to, update Python script and run it.
+ 
+ **Horizontal scroll may only work in Linux and macOS.
+ 
+ Finally, create a setup prettier than mine:
  <img src="https://user-images.githubusercontent.com/69062188/98510537-ec188c00-2228-11eb-8946-359f87deb79c.jpg" width="60%"></img> 
