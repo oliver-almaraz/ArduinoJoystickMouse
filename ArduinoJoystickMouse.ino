@@ -1,14 +1,14 @@
 // JOYSTICKS @ ARDUINO SETUP
 
-// 1° Joystick
-#define LEFT_CLICK 9 // SW
+// 2° Joystick
+#define LEFT_CLICK A4 // SW
 #define ANALOG_1_MOUSE A0 // VRy
 #define ANALOG_2_MOUSE A1 // VRx
 // +5v connected to pin 5V
 // GND connected to one Arduino's GND
 
-// 2° Joystick
-#define RIGHT_CLICK 10     // SW
+// 1° Joystick
+#define RIGHT_CLICK A5     // SW
 #define ANALOG_1_SCROLL A2  // VRy
 #define ANALOG_2_SCROLL A3  // VRx
 #define HIGH_SCROLL 7       // +5v
@@ -48,7 +48,7 @@ void loop() {
     ypos=map(y,550,1023,0,sensitivity);  
   if(y<=450)                  // when moved left
     ypos=map(y,450,0,0,-sensitivity); 
-  if(digitalRead(9)==LOW)   // when SW is pressed 
+  if(digitalRead(LEFT_CLICK)==LOW)   // when SW is pressed 
     z=1;
   else
     z=0;
