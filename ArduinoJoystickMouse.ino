@@ -1,14 +1,14 @@
 // JOYSTICKS @ ARDUINO SETUP
 
-// 2° Joystick
-#define LEFT_CLICK A4 // SW
+// 2° Joystick (right)
+#define LEFT_CLICK A4     // SW
 #define ANALOG_1_MOUSE A0 // VRy
 #define ANALOG_2_MOUSE A1 // VRx
 // +5v connected to pin 5V
 // GND connected to one Arduino's GND
 
-// 1° Joystick
-#define RIGHT_CLICK A5     // SW
+// 1° Joystick (left)
+#define RIGHT_CLICK A5      // SW
 #define ANALOG_1_SCROLL A2  // VRy
 #define ANALOG_2_SCROLL A3  // VRx
 #define HIGH_SCROLL 7       // +5v
@@ -28,9 +28,7 @@ void setup() {
   digitalWrite(RIGHT_CLICK,HIGH);
   pinMode(HIGH_SCROLL, OUTPUT);
   digitalWrite(HIGH_SCROLL, HIGH);
-
-
-}
+};
 
 void loop() {
 
@@ -78,4 +76,4 @@ void loop() {
     Serial.print("RIGHT_CLICK\n");
 
   delay(100);
-}
+};

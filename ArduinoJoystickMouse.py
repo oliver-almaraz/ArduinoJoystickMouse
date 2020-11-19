@@ -8,14 +8,14 @@ import serial
 
 pyautogui.FAILSAFE=False
 ArduinoSerial=serial.Serial('/dev/ttyACM0',9600) # May change
-time.sleep(1)
+time.sleep(1.0)
 
 print("Presiona Ctrl+c para salir\n")
 
 while True:
    try:
       data=str(ArduinoSerial.readline().decode('ascii'))  # read the data
-      print(data)
+      #print(data)
 
       if data[0].isdigit() or data[0] == "-":
          # If mouse joystick was used, data sent are x-y positions in digits (±)
@@ -29,7 +29,10 @@ while True:
             pyautogui.click(button="left")    # clicks left button
 
       else:
-         if "UP" in data:
+         if "CLICK" in data:
+            # Must be the first condition, otherwise won't be read
+            pyautogui.click(button="right")    # clicks right button
+         elif "UP" in data:
             pyautogui.scroll(5)   # scroll up 10 "clicks"
          elif "DOWN" in data:
             pyautogui.scroll(-5)   # scroll down 10 "clicks"
@@ -38,8 +41,5 @@ while True:
          elif "LEFT" in data:
             pyautogui.hscroll(-5)   # scroll left 10 "clicks"
 
-         elif "RIGHT_CLICK" in data:
-            pyautogui.click(button="right")    # clicks right button
    except KeyboardInterrupt:
-      print("\nAdiós\n")
       exit()
